@@ -5,14 +5,14 @@ from starlette.templating import Jinja2Templates
 
 from sqlalchemy.orm import Session
 
-import app.models as models
-from app.database import SessionLocal, engine
+import models as models
+from database import SessionLocal, engine
 
 import uvicorn
 
 models.Base.metadata.create_all(bind=engine)
 
-templates = Jinja2Templates(directory="app/templates")
+templates = Jinja2Templates(directory="templates")
 
 app = FastAPI()
 
